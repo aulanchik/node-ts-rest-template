@@ -2,15 +2,17 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 /**
- * Retrieves the value of an environment variable with the specified name. If the variable is not set, the default value is returned.
+ * Retrieves the value of an environment variable with the given name. If the variable is not found,
+ * it returns the provided default value.
  *
- * @param {string} name - The name of the environment variable.
- * @param {string | number} defaultValue - The default value to be returned if the variable is not set.
- * @return {string | number} - The value of the environment variable or the default value if the variable is not set.
+ * @param {string} name - The name of the environment variable to retrieve.
+ * @param {string | number} defaultValue - The default value to return if the environment variable is not found.
+ * @return {string} - The value of the environment variable, or the default value if not found.
  */
-const getEnvVar = (name: string, defaultValue: string | number): string | number => {
+const getEnvVar = (name: string, defaultValue: string | number): string => {
   const value = process.env[name];
-  return value || defaultValue;
+  const parsedValue = defaultValue.toString();
+  return value || parsedValue;
 };
 
 export default getEnvVar;

@@ -1,7 +1,7 @@
 import { getEnvVar } from '../helpers';
 
 type Configuration = {
-  [key: string]: string | number;
+  [key: string]: string;
 };
 
 const config: Configuration = Object.assign({
