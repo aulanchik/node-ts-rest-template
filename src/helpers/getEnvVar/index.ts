@@ -1,3 +1,3 @@
 import getEnvVar from './getEnvVar';
 
-export { getEnvVar };
+export default getEnvVar;
